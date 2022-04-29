@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="UTF-8" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'gradproj/signup.css' %}" />
+    <title>Study Source</title>
+  </head>
+  <body>
+    <div class="all">
+      <div class="sign_up_form">
+        <!-- <img src="usericon.png.jpeg" alt="User Icon" /> -->
+        <h1>Sign Up Now</h1>
+
+
+        <form method="POST">
+		{% csrf_token %}
+          {% for field in register_form %}
+          {{field.label}}
+          {{field}}
+          {% endfor %}
+
+		<button class="btn btn-primary" type="submit">Register</button>
+	</form>
+          <hr />
+
+        <form method>
+          <p class="or">OR</p>
+           <button type="button" class="gmailbutton">Sign up with GMAIL</button>
+          <p>Already have an account? <a href="/sign-in">Sign in</a></p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
