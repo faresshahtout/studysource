@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from students import views
+from questions import views as sview
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('sign-up/', views.register_request, name=''),
-    path('sign-in/', views.login_request, name='')
+    path('sign-in/', views.login_request, name=''),
+    path('questions/', sview.questions_view, name='')
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

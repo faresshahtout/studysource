@@ -16,7 +16,11 @@
 
         <form method="POST">
     {% csrf_token %}
-    {{ login_form }}
+          {% for field in login_form %}
+          {{field.label}}
+          {{field}}
+          {% endfor %}
+<!--    {{ login_form }}-->
     <button class="signup_button" type="submit">Sign in</button>
   </form>
 
