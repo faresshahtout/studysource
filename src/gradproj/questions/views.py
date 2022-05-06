@@ -6,6 +6,14 @@ import joblib as j
 from .models import questions
 # Create your views here.
 from django.shortcuts import  render, redirect
+def tree_view(request):
+	obj=questions.objects.get(user=request.user)
+	context={
+		"Mathematical": obj.Mathematical,
+		"Programming": obj.Programming,
+        "Theory":obj.Theory,
+	}
+	return render(request=request, template_name=r"tree.html", context=context)
 def questions_view(request):
     p=''
     dir=request.POST
@@ -22,12 +30,61 @@ def questions_view(request):
 
         for p in predictions:
             p
+        Programming = last_list[:3]
+        Mathematical = last_list[7:]
+        Theory = last_list[3:7]
+        M_prediction = ''
+        T_prediction = ''
+        P_prediction = ''
 
-        student = questions(user=request.user, result=p)
+
+        if p == 'Programming':
+            P_prediction = 'Green'
+            for i in Mathematical:
+                if i == 1.0:
+                    M_prediction = 'Orange'
+                    break
+                else:
+                    M_prediction = 'Red'
+            for a in Theory:
+                if a == 1.0:
+                    T_prediction = 'Orange'
+                    break
+                else:
+                    T_prediction = 'Red'
+        elif p == 'Mathematical':
+            M_prediction = 'Green'
+            for i in Programming:
+                if i == 1.0:
+                    P_prediction = 'Orange'
+                    break
+                else:
+                    P_prediction = 'Red'
+            for a in Theory:
+                if a == 1.0:
+                    T_prediction = 'Orange'
+                    break
+                else:
+                    T_prediction = 'Red'
+        elif p == 'Theory':
+            T_prediction = 'Green'
+            for i in Programming:
+                if i == 1.0:
+                    P_prediction = 'Orange'
+                    break
+                else:
+                    P_prediction = 'Red'
+            for a in Mathematical:
+                if a == 1.0:
+                    M_prediction = 'Orange'
+                    break
+                else:
+                    M_prediction = 'Red'
+        student = questions(user=request.user, Mathematical=M_prediction,Theory=T_prediction,Programming=P_prediction )
         student.save()
     else:
         messages.error(request, "please fill all the required fields.")
         # return(redirect('/questions/'))
 
-
+    # return redirect("home")
     return render(request=request, template_name="question.html", context={})

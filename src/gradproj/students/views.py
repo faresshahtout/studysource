@@ -4,8 +4,6 @@ from django.contrib.auth import login, authenticate #add this
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm #add this
 
-def tree_view(request):
-	return render(request=request, template_name=r"tree.html", context={"":""})
 def register_request(request):
     if request.method == "POST":
         print (request.POST)
@@ -32,7 +30,7 @@ def login_request(request):
 			if user is not None:
 				login(request, user)
 				messages.info(request, f"You are now logged in as {username}.")
-				return redirect("/admin")
+				return redirect("home")
 			else:
 				messages.error(request,"Invalid username or password.")
 		else:

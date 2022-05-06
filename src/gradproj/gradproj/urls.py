@@ -22,10 +22,10 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('', views.home_view, name='home'),
+    path('home', views.home_view, name='home'),
     path('admin/', admin.site.urls),
     path('sign-up/', views.register_request, name=''),
     path('sign-in/', views.login_request, name=''),
-    path('tree/', views.tree_view, name=''),
+    path('tree/', sview.tree_view, name=''),
     path('questions/', sview.questions_view, name='')
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
