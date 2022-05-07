@@ -57,12 +57,12 @@ button
     cursor: pointer;
 }
 
-.signup_button
+.btn-primary
 {
     background-color: #A94DB8;
 }
 
-.signup_button:hover
+.btn-primary:hover
 {
     background-color: #81258f;
 }

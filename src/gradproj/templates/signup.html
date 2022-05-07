@@ -16,13 +16,22 @@
 
         <form method="POST">
 		{% csrf_token %}
+          <table>
           {% for field in register_form %}
-          {{field.label}}
-          {{field}}
+            <tr>
+              <td>{{field.label}}</td>
+              <td>{{field}}</td>
+              </tr>
           {% endfor %}
-
-		<button class="btn btn-primary" type="submit">Register</button>
+</table>
+		<button class="btn-primary" type="submit">Register</button>
 	</form>
+        <form>
+        <p>
+            <span><input type="checkbox" /></span>I agree to the terms of
+            services
+          </p>
+          </form>
           <hr />
 
         <form method>

@@ -82,9 +82,10 @@ def questions_view(request):
                     M_prediction = 'Red'
         student = questions(user=request.user, Mathematical=M_prediction,Theory=T_prediction,Programming=P_prediction )
         student.save()
+        return redirect('http://127.0.0.1:8000/')
     else:
         messages.error(request, "please fill all the required fields.")
-        # return(redirect('/questions/'))
 
-    # return redirect("home")
+
+
     return render(request=request, template_name="question.html", context={})
