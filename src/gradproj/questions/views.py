@@ -18,18 +18,19 @@ def questions_view(request):
     p=''
     dir=request.POST
     new_list=list(dir.values())
-    print(new_list)
+
     new_list=new_list[1:]
     if len(new_list)==19:
         last_list = []
         for s in new_list:
             last_list.append(float(s))
-        print(last_list)
+
         model = j.load('studysorce.joblib')
         predictions = model.predict([last_list])
 
         for p in predictions:
             p
+        print(p)
         Programming = last_list[:3]
         Mathematical = last_list[7:]
         Theory = last_list[3:7]
@@ -82,7 +83,7 @@ def questions_view(request):
                     M_prediction = 'Red'
         student = questions(user=request.user, Mathematical=M_prediction,Theory=T_prediction,Programming=P_prediction )
         student.save()
-        return redirect('http://127.0.0.1:8000/')
+        return redirect('http://127.0.0.1:8000/tree')
     else:
         messages.error(request, "please fill all the required fields.")
 
