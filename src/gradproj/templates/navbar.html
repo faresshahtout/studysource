@@ -1,60 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     {% load static %}
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Navigation bar</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap"
+            rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="{% static 'gradproj/style.css' %}" />
-  </head>
+    <link rel="stylesheet" href="{% static 'gradproj/style.css' %}"/>
+</head>
 
-  <body>
-    <div class="box-area">
-      <header>
+<body>
+<div class="box-area">
+    <header>
         <div class="wrapper">
-          <div class="logo">
-            <a href="http://127.0.0.1:8000/">Study Source</a>
-          </div>
-          <nav>
-            <a href="/questions/">Questionnaire</a>
+            <div class="logo">
+                <a href="http://127.0.0.1:8000/">Study Source</a>
+            </div>
+            <nav>
+                <a href="/questions/">Questionnaire</a>
 
-            <a href="/tree/">Tree</a>
-            <a href="/sign-in/">Sign In</a>
-            <a href="sign-up/">Sign Up</a>
-            <a href="#">FAQ</a>
-            <a> welcome {{ request.user }}</a>
-          </nav>
+                <a href="/tree/">Tree</a>
+                <a href="#">FAQ</a>
+                {% if user.is_authenticated %}
+
+                <a> welcome {{ request.user }}</a>
+                <a class="nav-link" href="/logout">Logout</a>
+
+
+                {% else %}
+
+
+                <a href="/sign-in/">Sign In</a>
+                <a href="sign-up/">Sign Up</a>
+
+                {% endif %}
+
+
+            </nav>
         </div>
-      </header>
-      <div class="banner-area">
-        <h2>Don't Wish it was easier<br />Wish you were better.</h2>
-      </div>
-      <div class="content-area">
+    </header>
+    <div class="banner-area">
+        <h2>Don't Wish it was easier<br/>Wish you were better.</h2>
+    </div>
+    <div class="content-area">
         <div class="wrapper">
-          <h2
-            style="
+            <h2
+                    style="
               font-family: 'Source Sans Pro', sans-serif;
               color: rgb(0, 0, 0);
             "
-          >
-            About Study Source
-          </h2>
-          <p>
-            This is project is used to help the students who were affected by
-            the COVID situation and who are getting affected everyday by not
-            studying
-          </p>
-          <a href="#">GMAIL</a>
-          <a href="#">LINKEDIN</a>
-          <a href="#">MOBILE</a>
+            >
+                About Study Source
+            </h2>
+            <p>
+                Study source guide computer science students to specify the recommended courses to be taken during their second year based on machine learning techniques
+            </p>
+            <a href="#">GMAIL</a>
+            <a href="#">LINKEDIN</a>
+            <a href="#">MOBILE</a>
         </div>
-      </div>
     </div>
-  </body>
+</div>
+</body>
 </html>

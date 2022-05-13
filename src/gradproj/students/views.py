@@ -3,6 +3,7 @@ from forms import NewUserForm
 from django.contrib.auth import login, authenticate
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login, authenticate, logout
 from django import forms
 
 def register_request(request):
@@ -20,7 +21,7 @@ def register_request(request):
     return render(request=request, template_name=r"signup.html", context={"register_form": form})
 
 
-def login_request(request):
+def login_request(request,*args,**kwargs):
 
 	if request.method == "POST":
 		form = AuthenticationForm(request, data=request.POST)
@@ -40,3 +41,7 @@ def login_request(request):
 	return render(request=request, template_name="signin.html", context={"login_form":form})
 def home_view(request):
 	return render(request=request, template_name=r"navbar.html", context={"":''})
+def logout_request(request):
+	logout(request)
+	messages.info(request, "You have successfully logged out.")
+	return redirect("http://127.0.0.1:8000/")

@@ -7,13 +7,20 @@ from .models import questions
 # Create your views here.
 from django.shortcuts import  render, redirect
 def tree_view(request):
-	obj=questions.objects.get(user=request.user)
-	context={
-		"Mathematical": obj.Mathematical,
-		"Programming": obj.Programming,
-        "Theory":obj.Theory,
-	}
-	return render(request=request, template_name=r"tree.html", context=context)
+    try:
+        obj = questions.objects.get(user=request.user)
+        context = {
+            "Mathematical": obj.Mathematical,
+            "Programming": obj.Programming,
+            "Theory": obj.Theory,
+        }
+    except:
+        context = {
+            "Mathematical": '',
+            "Programming": '',
+            "Theory": '',
+        }
+    return render(request=request, template_name=r"tree.html", context=context)
 def questions_view(request):
     p=''
     dir=request.POST
@@ -25,7 +32,7 @@ def questions_view(request):
         for s in new_list:
             last_list.append(float(s))
 
-        model = j.load('studysorce.joblib')
+        model = j.load('studysource.joblib')
         predictions = model.predict([last_list])
 
         for p in predictions:
