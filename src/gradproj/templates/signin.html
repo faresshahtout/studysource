@@ -1,15 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    {% load static %}
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="{% static 'gradproj/signin.css' %}" />
-    <title>Study Source</title>
-  </head>
+{% extends 'navbar.html'%}
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--  <head>-->
+<!--    {% load static %}-->
+<!--    <meta charset="UTF-8" />-->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge" />-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
+<!--    <link rel="stylesheet" type="text/css" href="{% static 'gradproj/signin.css' %}" />-->
+<!--    <title>Study Source</title>-->
+<!--  </head>-->
+
   <body>
+
+{% block home %}
+<div >     </div>
+<h3>Guiding Computer Science students for the right path</h3>
     <div class="all">
+
       <div class="sign_up_form">
             <div style="margin-right:20px;">
           <a href="http://127.0.0.1:8000/"><img src="{% static 'gradproj/images/homelogo.png' %}" width="50px" height="32px" alt ="Home page" style="position: relative; top:9px; left:10px"></a>
@@ -30,12 +37,12 @@
      <hr />
           <p class="or">OR</p>
           <button type="button" class="gmailbutton">Sign in with GMAIL</button>
-          <p>Didn't has an account? <a href="http://127.0.0.1:8000/sign-up/">Sign up</a></p>
+          <p>Do not have an account? <a href="http://127.0.0.1:8000/sign-up/">Sign up</a></p>
 
 </form>
 
 
       </div>
     </div>
-  </body>
+ {% endblock %} </body>
 </html>

@@ -28,6 +28,10 @@ def questions_view(request):
 
     new_list=new_list[1:]
     if len(new_list)==19:
+        try:
+            questions.objects.filter(user=request.user).delete()
+        except:
+            pass
         last_list = []
         for s in new_list:
             last_list.append(float(s))
@@ -44,50 +48,62 @@ def questions_view(request):
         M_prediction = ''
         T_prediction = ''
         P_prediction = ''
-
-
+        M_counter=0
+        T_counter=0
+        P_counter=0
+        M_length=len(Mathematical)
+        T_length=len(Theory)
+        P_length=len(Programming)
         if p == 'Programming':
             P_prediction = 'Green'
             for i in Mathematical:
                 if i == 1.0:
-                    M_prediction = 'Orange'
-                    break
-                else:
-                    M_prediction = 'Red'
+                    M_counter += 1
             for a in Theory:
                 if a == 1.0:
-                    T_prediction = 'Orange'
-                    break
-                else:
-                    T_prediction = 'Red'
+                    T_counter += 1
+
+            if M_counter / M_length >= 0.4:
+                M_prediction = 'Orange'
+            else:
+                M_prediction = 'Red'
+            if T_counter / T_length >= 0.4:
+                T_prediction = 'Orange'
+            else:
+                T_prediction = 'Red'
         elif p == 'Mathematical':
             M_prediction = 'Green'
             for i in Programming:
                 if i == 1.0:
-                    P_prediction = 'Orange'
-                    break
-                else:
-                    P_prediction = 'Red'
+                    P_counter += 1
             for a in Theory:
                 if a == 1.0:
-                    T_prediction = 'Orange'
-                    break
-                else:
-                    T_prediction = 'Red'
+                    T_counter += 1
+            if P_counter / P_length >= 0.4:
+                P_prediction = 'Orange'
+            else:
+                P_prediction = 'Red'
+            if T_counter / T_length >= 0.4:
+                T_prediction = 'Orange'
+            else:
+                T_prediction = 'Red'
         elif p == 'Theory':
             T_prediction = 'Green'
             for i in Programming:
                 if i == 1.0:
-                    P_prediction = 'Orange'
-                    break
-                else:
-                    P_prediction = 'Red'
+                    P_counter += 1
             for a in Mathematical:
                 if a == 1.0:
-                    M_prediction = 'Orange'
-                    break
-                else:
-                    M_prediction = 'Red'
+                    M_counter += 1
+
+            if M_counter / M_length >= 0.4:
+                M_prediction = 'Orange'
+            else:
+                M_prediction = 'Red'
+            if P_counter / P_length >= 0.4:
+                P_prediction = 'Orange'
+            else:
+                P_prediction = 'Red'
         student = questions(user=request.user, Mathematical=M_prediction,Theory=T_prediction,Programming=P_prediction )
         student.save()
         return redirect('http://127.0.0.1:8000/tree')

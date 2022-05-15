@@ -12,62 +12,75 @@
     </style>
   </head>
   <body>
-   <div class="box-area">
-      <header>
+  <div class="box-area">
+    <header>
         <div class="wrapper">
-          <div class="logo">
-            <a href="http://127.0.0.1:8000/">Study Source</a>
-          </div>
-          <nav>
-            <a href="http://127.0.0.1:8000/questions/">Questionnaire</a>
-            <a href="#">About us</a>
-            <a href="http://127.0.0.1:8000/tree/">Tree</a>
-            <a href="http://127.0.0.1:8000/sign-in/">Sign In</a>
-            <a href="http://127.0.0.1:8000/sign-up/">Sign Up</a>
-          </nav>
-        </div>
-      </header> 
+            <div class="logo">
+                <a href="http://127.0.0.1:8000/">Study Source</a>
+            </div>
+            <nav>
+                <a href="/questions/">Questionnaire</a>
 
+                <a href="/tree/">Tree</a>
+                <a href="/faq/">FAQ</a>
+                {% if user.is_authenticated %}
+
+                <a> welcome {{ request.user }}</a>
+                <a class="nav-link" href="/logout">Logout</a>
+
+
+                {% else %}
+
+
+                <a href="/sign-in/">Sign In</a>
+                <a href="sign-up/">Sign Up</a>
+
+                {% endif %}
+
+
+            </nav>
+        </div>
+    </header>
      <div class="t">
       <div class="tree">
         <ul >
           <li >
-            <a href=" " style="background-color:{{Programming}};">مقدمة في البرمجة</a>
+            <a href="http://127.0.0.1:8000/c++ " style="background-color:{{Programming}};">مقدمة في البرمجة</a>
             <ul>
               <li>
                 <ul>
-                  <li><a href="#"style="background-color:{{Programming}};"> برمجة كينونية 1</a>
+                  <li><a href="http://127.0.0.1:8000/java1/"style="background-color:{{Programming}};"> برمجة كينونية 1</a>
                     <ul>
-                      <li><a href="#"style="background-color:{{Programming}};">برمجة مرئية</a></li>
-                      <li> <a href="" style="background-color:{{Theory}};"> تراكيب البيانات</a>
+                      <li><a href="http://127.0.0.1:8000/vs/"style="background-color:{{Programming}};">برمجة مرئية</a></li>
+                      <li> <a href="http://127.0.0.1:8000/ds/" style="background-color:{{Theory}};"> تراكيب البيانات</a>
                       <ul>
-                        <li><a href="" style="background-color:{{Theory}};">ذكاء الصطناعي</a></li>
-                        <li><a href="" style="background-color:{{Theory}};">خوارزميات</a>
+                        <li><a href="http://127.0.0.1:8000/ai/" style="background-color:{{Theory}};">ذكاء الصطناعي</a></li>
+                        <li><a href="http://127.0.0.1:8000/algo" style="background-color:{{Theory}};">خوارزميات</a>
                         <ul>
-                          <li><a href="" style="background-color:{{Theory}};">التنقيب عن البيانات </a></li>
+                          <li><a href="http://127.0.0.1:8000/datamining" style="background-color:{{Theory}};">التنقيب عن البيانات </a></li>
                         </ul>
                         </li>
-                        <li><a href=""style="background-color:{{Theory}};"> برمجة الوسائط المتعددة</a></li>
-                        <li><a href="" style="background-color:{{Programming}};">الرسم بالحاسوب </a></li>
-                        <li><a href="" style="background-color:{{Programming}};">أساليب المحاكاه</a></li>
-                        <li><a href="" style="background-color:{{Programming}};"> مقدمة في نظم قواعد البيانات</a>
+                        <li><a href="http://127.0.0.1:8000/multi/"style="background-color:{{Theory}};"> برمجة الوسائط المتعددة</a></li>
+                        <li><a href="http://127.0.0.1:8000" style="background-color:{{Programming}};">الرسم بالحاسوب </a></li>
+                        <li><a href="http://127.0.0.1:8000" style="background-color:{{Programming}};">أساليب المحاكاه</a></li>
+                        <li><a href="http://127.0.0.1:8000/db/" style="background-color:{{Programming}};"> مقدمة في نظم قواعد البيانات</a>
                         <ul>
-                          <li><a href="" style="background-color:{{Programming}};">امن نظم المعلومات</a></li>
-                          <li><a href="" style="background-color:{{Theory}};">تحليل و تصميم النظم</a></li>
+                          <li><a href="http://127.0.0.1:8000/secure" style="background-color:{{Programming}};">امن نظم المعلومات</a></li>
+                          <li><a href="http://127.0.0.1:8000/analysis" style="background-color:{{Theory}};">تحليل و تصميم النظم</a></li>
                         </ul>
                         </li>
                       </ul>
                       </li>
-                      <li><a href="#" style="background-color:{{Theory}};">اساسيات هندسة البرمجيات</a></li>
-                      <li> <a href="" style="background-color:{{Programming}};"> برمجة كينونية 2</a>
+                      <li><a href="http://127.0.0.1:8000/swe/" style="background-color:{{Theory}};">اساسيات هندسة البرمجيات</a></li>
+                      <li> <a href="http://127.0.0.1:8000/java2/" style="background-color:{{Programming}};"> برمجة كينونية 2</a>
                       <ul>
                         <li><a href="" style="background-color:{{Programming}};"> تطوير تطبيقات الأجهزة المحمولة </a></li>
                         <li><a href="" style="background-color:{{Theory}};"> تصميم و تنفيذ واجهة المستخدم </a></li>
                       </ul>
                       </li>
-                      <li><a href="#" style="background-color:{{Programming}};"> برمجة تطبيقات الانترنت</a>
+                      <li><a href="http://127.0.0.1:8000/web/" style="background-color:{{Programming}};"> برمجة تطبيقات الانترنت</a>
                       <ul>
-                          <li><a href="" style="background-color:{{Programming}};">تصميم لغات برمجة</a></li>
+                          <li><a href="http://127.0.0.1:8000" style="background-color:{{Programming}};">تصميم لغات برمجة</a></li>
                       </ul>
                       </li>
                     </ul>
@@ -80,23 +93,23 @@
 <br><br><br>
       <div class="tree">
         <ul>
-          <li><a href="" style="background-color:{{Mathematical}};">رياضيات متقطعة</a>
+          <li><a href="http://127.0.0.1:8000/disc/" style="background-color:{{Mathematical}};">رياضيات متقطعة</a>
           <ul>
-            <li><a href="" style="background-color:{{Theory}};">نظريات الحسابات</a></li>
+            <li><a href="http://127.0.0.1:8000/theory" style="background-color:{{Theory}};">نظريات الحسابات</a></li>
             <li><a href="" style="background-color:{{Theory}};">التصميم المنطقي الرقمي </a>
             <ul>
-              <li><a href="" style="background-color:{{Theory}};">تصميم و تنظيم الحاسوب </a>
+              <li><a href="http://127.0.0.1:8000/org/" style="background-color:{{Theory}};">تصميم و تنظيم الحاسوب </a>
               <ul>
-              <li><a href="" style="background-color:{{Theory}};">أساسيات معمارية الحاسوب </a></li>
+              <li><a href="http://127.0.0.1:8000/arch/" style="background-color:{{Theory}};">أساسيات معمارية الحاسوب </a></li>
               </ul>
               </li>
-              <li><a href="" style="background-color:{{Programming}};"> نظم التشغيل</a></li>
-              <li><a href="" style="background-color:{{Programming}};">شبكات الحاسوب</a>
+              <li><a href="http://127.0.0.1:8000/os" style="background-color:{{Programming}};"> نظم التشغيل</a></li>
+              <li><a href="http://127.0.0.1:8000/network" style="background-color:{{Programming}};">شبكات الحاسوب</a>
               <ul>
-                <li><a href="" style="background-color:{{Programming}};">الحوسبة المتوازية</a></li>
-              <li><a href="" style="background-color:{{Theory}};">الشبكات اللاسلكية</a></li>
-              <li><a href="" style="background-color:{{Theory}};">أمن الشبكات </a></li>
-              <li><a href="" style="background-color:{{Theory}};">بروتوكولات الانترنت </a></li>
+                <li><a href="http://127.0.0.1:8000/para" style="background-color:{{Programming}};">الحوسبة المتوازية</a></li>
+              <li><a href="http://127.0.0.1:8000" style="background-color:{{Theory}};">الشبكات اللاسلكية</a></li>
+              <li><a href="http://127.0.0.1:8000" style="background-color:{{Theory}};">أمن الشبكات </a></li>
+              <li><a href="http://127.0.0.1:8000" style="background-color:{{Theory}};">بروتوكولات الانترنت </a></li>
               </ul>
               </li>
             </ul>
@@ -110,15 +123,15 @@
 <div class="tree">
 
 <ul>
-  <li><a href="#" style="background-color:{{Mathematical}};" >تفاضل و تكامل 1</a>
-  <ul><li><a href="" style="background-color:{{Mathematical}};">تفاضل و تكامل 2</a></li></ul></li>
+  <li><a href="http://127.0.0.1:8000/cal1" style="background-color:{{Mathematical}};" >تفاضل و تكامل 1</a>
+  <ul><li><a href="http://127.0.0.1:8000/cal2" style="background-color:{{Mathematical}};">تفاضل و تكامل 2</a></li></ul></li>
 </ul>
 </div>
 
 <div class="tree" >
 <ul>
-  <li><a href="" style="background-color:{{Mathematical}};">فيزياء عامة 1</a><ul>
-    <li><a href="" style="background-color:{{Mathematical}};">فيزياء عامة 2</a>
+  <li><a href="http://127.0.0.1:8000/phy1" style="background-color:{{Mathematical}};">فيزياء عامة 1</a><ul>
+    <li><a href="http://127.0.0.1:8000/phy2" style="background-color:{{Mathematical}};">فيزياء عامة 2</a>
     </li>
   </ul>
 </li>
@@ -126,12 +139,12 @@
 </div>
 <br>
  <div class="tree">
-   <ul><li><a href="" style="background-color:{{Mathematical}};">جبر خطي </a>
-  <ul><li><a href="" style="background-color:{{Mathematical}};">طرق عددية</a>
-  <ul><li><a href=""style="background-color:{{Mathematical}};">بحوث عمليات</a></li></ul></li></ul></li></ul>
+   <ul><li><a href="http://127.0.0.1:8000" style="background-color:{{Mathematical}};">جبر خطي </a>
+  <ul><li><a href="http://127.0.0.1:8000/nume" style="background-color:{{Mathematical}};">طرق عددية</a>
+  <ul><li><a href="http://127.0.0.1:8000" style="background-color:{{Mathematical}};">بحوث عمليات</a></li></ul></li></ul></li></ul>
  </div>
 
- <div class="tree"><ul><li><a href="" style="background-color:{{Mathematical}};">مبادئ احصاء</a></li></ul></div>
+ <div class="tree"><ul><li><a href="http://127.0.0.1:8000/statistics" style="background-color:{{Mathematical}};">مبادئ احصاء</a></li></ul></div>
 
 
    </div>

@@ -3,80 +3,146 @@
   <head>
     {% load static %}
     <meta charset="UTF-8" />
-    <title>Navigation bar</title>
-    <link rel="stylesheet" href="{% static 'gradproj/style.css' %}"  />
-    <link rel="stylesheet" href="{% static 'gradproj/about-us-css.css' %}" >
+    <title>FAQ</title>
+    <link rel="stylesheet" href="{% static 'gradproj/about-main.css' %}"  />
+    <link rel="stylesheet" href="{% static 'gradproj/about-nav.css' %}" >
   </head>
-
   <body>
-    <div class="box-area">
-      <header>
+ <div class="box-area">
+    <header>
         <div class="wrapper">
-          <div class="logo">
-            <a href="#"> About us </a>
-          </div>
-          <nav>
-            <a href="#"> FQA</a>
-            <a href="#">Tree</a>
-            <a href="#">Sign In</a>
-            <a href="#">Sign Up</a>
-          </nav>
-        </div>
-      </header>
-
-      <div class="section">
-        <div class="container">
-          <div class="content-section">
-            <div class="title">
-              <h1>About Us</h1>
+            <div class="logo">
+                <a href="http://127.0.0.1:8000/">Study Source</a>
             </div>
-            <div class="content">
-              <h3>Study source </h3>
-              <p>guide computer science students to specify the recommended courses to be taken during their second year based on machine learning techniques
-</p>
-              <div class="button">
+            <nav>
+                <a href="/questions/">Questionnaire</a>
 
-                  <summary>question </summary> <details>
-                  <ol>
-                    <li> Why do we need Study Source?</li>
-                    <li>Take the abstract I sent to you as a reference.</li>
+                <a href="/tree/">Tree</a>
+                <a href="/faq/">FAQ</a>
+                {% if user.is_authenticated %}
+
+                <a> welcome {{ request.user }}</a>
+                <a class="nav-link" href="/logout">Logout</a>
 
 
-                  </ol></details>
-                  <details> <ol>
-                    <li> What is ABET?</li>
-                    <li>Take the abstract I sent to you as a reference.</li>
-                   </ol></details>
-                  <details> <ol>
-                    <li> What are the learning outcomes of Computer Science according to ABET? </li>
-                    <li>Take the abstract I sent to you as a reference.</li>
-                   </ol></details>
-                   <details><ol>
-                    <li> How Study Source works? take the abstract as a reference What is the curriculum (Tree) of Computer Science? </li>
-                    <li>Take the abstract I sent to you as a reference.</li>
-                   </ol></details>
-                <details>
-                   <ol>
+                {% else %}
 
-                    <li> Github </li>
-                    <li>Take the abstract I sent to you as a reference.</li>
-                   </ol></details>
-                  <details> <ol>
-                    <li>  Contact us:</li>
-                    <li>Our names and emails</li>
-                   </ol>
-                </details>
-              </div>
-            </div>
-          </div>
-          <div class="image-section">
-            <img src="Planning your studies.jpg">
-          </div>
+
+                <a href="/sign-in/">Sign In</a>
+                <a href="sign-up/">Sign Up</a>
+
+                {% endif %}
+
+
+            </nav>
         </div>
-      </div>
-    
-    
+    </header>
+
+    <div class="banner-area">
       
-    </div>
+   
+
+
+          <img src="{% static 'gradproj/images/aboutus.png' %}"alt="Paris" class="center">
+
+
+            <div class="about-section">
+               <h1>About Us</h1><br>
+              <p>We’re a group of students from the Hashemite University studying Computer Science. 
+              We developed this website as a reliable interactive educational tool for assisting students in
+               choosing the right courses based on their own performance in the freshman year of computer science..</p>
+            </div>
+
+         <div class="about-section" style="margin-top: 1cm ;">
+            <br>
+            <details><summary>Why do we need Study Source? </summary> <br><p>Study source is a reliable interactive educational tool for assisting students in choosing the right courses based on their own performance in the freshman year of computer science. </p> <br> </details>
+            <br><details><summary>What is ABET? </summary> <br><p>nonprofit, ISO 9001 certified organization that accredits college and university programs in applied and natural science, computing, engineering and engineering technology.</p> <br> <br> </details>
+          <br><details><summary>What are the learning outcomes of Computer Science according to ABET? </summary> <br><p> SAnalyze a complex computing problem, design, implement, and evaluate a computing program, communicate effectively in a variety of professional contexts, recognize professional responsibilities and make informed judgments in computing practice and function effectively as a member or leader </p> <br> </details>
+         <br> <details><summary>How Study Source works? </summary> <br><p>Study Source was developed over machine learning techniques for recommending the courses to be taken in the curriculum based on a questionnaire filled by a student, in addition to helpful resources and links that cover the material of courses. The questionnaire was built according to ABET learning outcomes related to Computer Science.</p> <br> </details>
+          <br><details><summary>What is the curriculum tree shown by Study Source? </summary><br><p> Study Source demonstrates a tree that represents the different courses in the curriculum of Computer Science in a hierarchical format according to the years in which these courses can be taken. Study Source ranks these courses from "Strongly recommended" to "Weakly recommended". The color of each clickable course in the tree shows how it has been ranked.</p></details>
+            </div>
+
+              <br>
+                <h1 style="text-align:center">Our Team</h1>
+              <div class="space">
+                <br>
+                <div class="row">
+                  <div class="column">
+                    <div class="card">
+                       <img src="{%static 'gradproj/images/ahmadal.jpg' %}" alt="ahmada" style="width:100%; height: 100%;">
+                        <div class="container">
+                          <br>
+                          <h2> Dr. Ahmad  Qawasmeh  </h2>
+                          <p class="title">Supervisor</p>
+                          <p>ahmadr@hu.edu.jo</p>
+                        </div>
+                        <br>
+                    </div>
+                   </div>
+
+                  <div class="column">
+                     <div class="card">
+                      <img src="{% static 'gradproj/images/njd.jpg' %}" alt="njd" style="width:100% ;height: 100%;">
+                        <div class="container">
+                          <br>
+                            <h2>Ahmad AlNjada</h2> <br>
+                              <p>ahmadnajada1233@gmail.com</p>
+                              <br>
+                          </div>
+                          <br>
+                      </div>
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="column">
+                     <div class="card">
+                      <img src="{% static 'gradproj/images/amer.jpg' %}" alt="amer" style="width:100% ;height: 100%;">
+                        <div class="container"> <br>
+                           <h2>Amer Naser</h2> <br>
+                          <p>amernasersts@gmail.com</p><br><br> <br>
+                        </div>
+                    </div>
+                   </div>
+
+                     <div class="column">
+                       <div class="card">
+                        <img src="{% static 'gradproj/images/razan.jpg' %}" alt="razan" style="width:100% ;height: 100%;">
+                       <div class="container"> <br>
+                         <h2>Razan Alsmadi</h2> <br>
+                          <p>raz.alsmadi@gmail.com </p> <br><br>
+                       </div>
+                       </div>
+                     </div>
+                 </div>
+    
+
+                    <div class="row">
+                      <div class="column">
+                          <div class="card">
+                           <img src="{% static 'gradproj/images/fares.jpg' %}" alt="fares" style="width:100% ;height: 100%;">
+                            <div class="container"> <br>
+                              <h2>Fares Shahtout</h2><br>
+                             <p> anzifares@gmail.com </p> <br>
+                            </div>
+                            </div>
+                        </div>
+
+                      <div class="column">
+                         <div class="card">
+                           <img src="{% static 'gradproj/images/jenan.jpg' %}" alt="jejan" style="width:100%" height="100% ;height: 100%;">
+                            <div class="container"> <br>
+                               <h2>Jenan Hamideh</h2><br>
+                                <p> jenanhamede@gmail.com </p><br>
+
+                            </div>
+                         </div>
+                        </div>
+                    </div>
+    
+              </div>
+       </div>
+ </div>
   </body>
 </html>

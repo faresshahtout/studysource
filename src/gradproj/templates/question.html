@@ -4,211 +4,240 @@
 <head>
     {% load static %}
     <title>Question</title>
-    <link rel="stylesheet" href="{% static 'gradproj/question.css' %}" .>
+    <link href="{% static 'gradproj/questions2.css' %}" rel="stylesheet">
 </head>
 
 <!--Programming-->
-<form method="post" action="/questions/">
+<form action="/questions/" method="post">
     {% csrf_token %}
     <div class="wrapper">
         <div class="wrap" id="q1">
-             <h2> Please fill in this questionnaire to be directed to your recommended curriculum tree according to your input:</h2>
-        <br>
+            <h2> Please fill in this questionnaire to be directed to your recommended curriculum tree according to your
+                input:</h2>
+            <br>
             <div class="text-center pb-4">
 
             </div>
 
-            <div class="h5 font-weight-bold"><b><h2> C++/Java-1/Java-2 :</h2></b></div>
+            <div align="center" class="h5 font-weight-bold"><b><h2> C++/Java-1/Java-2 :</h2></b></div>
+            <br>
             <div class="h4 font-weight-bold"><b> 1- Recognize syntax and semantics of Java/C++ and demonstrate knowledge
                 of language specification? </b></div>
+            <br>
             <div class="pt-4">
-                <label class="q1-options">YES<input type="radio" name="q1" value="1"> <span class="checkmark"></span>
-                </label> <label class="q1-options">NO <input type="radio" name="q1" value="0"> <span
+                <label class="q1-options">YES<input name="q1" type="radio" value="1"> <span class="checkmark"></span>
+                </label> <label class="q1-options">NO <input name="q1" type="radio" value="0"> <span
                     class="checkmark"></span>
-            </label> <label class="q1-options">Non <input type="radio" name="q1" value="0.5"> <span
+            </label> <label class="q1-options">Not taken <input name="q1" type="radio" value="0.5"> <span
                     class="checkmark"></span>
             </label></div>
         </div>
         <div class="h4 font-weight-bold"><b> 2- Apply control structure, methods, arrays, and strings in designing
             C++/Java applications? </b></div>
+        <br>
         <div class="pt-4">
-            <label class="q1-options">YES<input type="radio" name="q2" value="1"> <span class="checkmark"></span>
-            </label> <label class="q1-options">NO <input type="radio" name="q2" value="0"> <span
+            <label class="q1-options">YES<input name="q2" type="radio" value="1"> <span class="checkmark"></span>
+            </label> <label class="q1-options">NO <input name="q2" type="radio" value="0"> <span
                 class="checkmark"></span>
-        </label> <label class="q1-options">Non <input type="radio" name="q2" value="0.5"> <span
+        </label> <label class="q1-options">Not taken <input name="q2" type="radio" value="0.5"> <span
                 class="checkmark"></span>
         </label></div>
-         <div class="h4 font-weight-bold"><b> 3- Apply the concepts of Object-oriented, event and error handling in
-                designing Java applications and GUIs. ? </b></div>
+        <div class="h4 font-weight-bold"><b> 3- Apply the concepts of Object-oriented, event and error handling in
+            designing Java applications and GUIs. ? </b></div>
+        <br>
         <div class="pt-4">
-            <label class="q1-options">YES<input type="radio" name="q3" value="1"> <span class="checkmark"></span>
-            </label> <label class="q1-options">NO <input type="radio" name="q3" value="0"> <span
+            <label class="q1-options">YES<input name="q3" type="radio" value="1"> <span class="checkmark"></span>
+            </label> <label class="q1-options">NO <input name="q3" type="radio" value="0"> <span
                 class="checkmark"></span>
-        </label> <label class="q1-options">Non <input type="radio" name="q3" value="0.5"> <span
+        </label> <label class="q1-options">Not taken <input name="q3" type="radio" value="0.5"> <span
                 class="checkmark"></span>
         </label></div>
-   <hr>
 
         <div class="text-center pb-4">
 
-                <div class="h5 font-weight-bold"><b><h2> Data-Structures :</h2></b></div>
-            </div>
-     <div class="h4 font-weight-bold"><b> 1- Analyze algorithms and demonstrate the differences of using linked
-                lists versus fixed size arrays? </b></div>
+            <div align="center" class="h5 font-weight-bold"><b><h2> Data-Structures :</h2></b></div>
+            <br>
+        </div>
+        <div class="h4 font-weight-bold"><b> 1- Analyze algorithms and demonstrate the differences of using linked
+            lists versus fixed size arrays? </b></div>
+        <br>
         <div class="pt-4">
-            <label class="q1-options">YES<input type="radio" name="q4" value="1"> <span class="checkmark"></span>
-            </label> <label class="q1-options">NO <input type="radio" name="q4" value="0"> <span
+            <label class="q1-options">YES<input name="q4" type="radio" value="1"> <span class="checkmark"></span>
+            </label> <label class="q1-options">NO <input name="q4" type="radio" value="0"> <span
                 class="checkmark"></span>
-        </label> <label class="q1-options">Non <input type="radio" name="q4" value="0.5"> <span
+        </label> <label class="q1-options">Not taken <input name="q4" type="radio" value="0.5"> <span
                 class="checkmark"></span>
         </label></div>
         <div class="h4 font-weight-bold"><b> 2- Illustrate and distinguish several data structures like stacks,
-                queues, BST, hashing, etc? </b></div>
+            queues, BST, hashing, etc? </b></div>
+        <br>
         <div class="pt-4">
-            <label class="q1-options">YES<input type="radio" name="q5" value="1"> <span class="checkmark"></span>
-            </label> <label class="q1-options">NO <input type="radio" name="q5" value="0"> <span
+            <label class="q1-options">YES<input name="q5" type="radio" value="1"> <span class="checkmark"></span>
+            </label> <label class="q1-options">NO <input name="q5" type="radio" value="0"> <span
                 class="checkmark"></span>
-        </label> <label class="q1-options">Non <input type="radio" name="q5" value="0.5"> <span
+        </label> <label class="q1-options">Not taken <input name="q5" type="radio" value="0.5"> <span
                 class="checkmark"></span>
         </label></div>
-         <div class="h5 font-weight-bold"><b><h2> Logic : </h2></b></div>
-        <div class="h4 font-weight-bold"><b>  1- Recognize the numbering systems and digital logic circuits? </b></div>
+        <div align="center" class="h5 font-weight-bold"><b><h2> Logic : </h2></b></div>
+        <br>
+        <div class="h4 font-weight-bold"><b> 1- Recognize the numbering systems and digital logic circuits? </b></div>
+        <br>
         <div class="pt-4">
-            <label class="q1-options">YES<input type="radio" name="q6" value="1"> <span class="checkmark"></span>
-            </label> <label class="q1-options">NO <input type="radio" name="q6" value="0"> <span
+            <label class="q1-options">YES<input name="q6" type="radio" value="1"> <span class="checkmark"></span>
+            </label> <label class="q1-options">NO <input name="q6" type="radio" value="0"> <span
                 class="checkmark"></span>
-        </label> <label class="q1-options">Non <input type="radio" name="q6" value="0.5"> <span
+        </label> <label class="q1-options">Not taken <input name="q6" type="radio" value="0.5"> <span
                 class="checkmark"></span>
         </label></div>
-        <div class="h4 font-weight-bold"><b>  2- Analyze and design Boolean, combinational and sequential logic
-                circuits for implementing logic functions? </b></div>
+        <div class="h4 font-weight-bold"><b> 2- Analyze and design Boolean, combinational and sequential logic
+            circuits for implementing logic functions? </b></div>
+        <br>
         <div class="pt-4">
-            <label class="q1-options">YES<input type="radio" name="q7" value="1"> <span class="checkmark"></span>
-            </label> <label class="q1-options">NO <input type="radio" name="q7" value="0"> <span
+            <label class="q1-options">YES<input name="q7" type="radio" value="1"> <span class="checkmark"></span>
+            </label> <label class="q1-options">NO <input name="q7" type="radio" value="0"> <span
                 class="checkmark"></span>
-        </label> <label class="q1-options">Non <input type="radio" name="q7" value="0.5"> <span
+        </label> <label class="q1-options">Not taken <input name="q7" type="radio" value="0.5"> <span
                 class="checkmark"></span>
         </label></div>
-        <hr>
 
-                <div class="h5 font-weight-bold"><b><h2> Discrete mathematics:</h2></b></div>
-        <div class="h4 font-weight-bold"><b>  1- Construct simple mathematical proofs and understand logical
-                arguments and logical constructs? </b></div>
+        <div align="center" class="h5 font-weight-bold"><b><h2> Discrete mathematics:</h2></b></div>
+        <br>
+        <div class="h4 font-weight-bold"><b> 1- Construct simple mathematical proofs and understand logical
+            arguments and logical constructs? </b></div>
+        <br>
         <div class="pt-4">
-            <label class="q1-options">YES<input type="radio" name="q8" value="1"> <span class="checkmark"></span>
-            </label> <label class="q1-options">NO <input type="radio" name="q8" value="0"> <span
+            <label class="q1-options">YES<input name="q8" type="radio" value="1"> <span class="checkmark"></span>
+            </label> <label class="q1-options">NO <input name="q8" type="radio" value="0"> <span
                 class="checkmark"></span>
-        </label> <label class="q1-options">Non <input type="radio" name="q8" value="0.5"> <span
+        </label> <label class="q1-options">Not taken <input name="q8" type="radio" value="0.5"> <span
                 class="checkmark"></span>
         </label></div>
-<div class="h4 font-weight-bold"><b>  2- Understand sets, functions, relations, and computer programs in a
-                formal mathematical manner? </b></div>
+        <div class="h4 font-weight-bold"><b> 2- Understand sets, functions, relations, and computer programs in a
+            formal mathematical manner? </b></div>
+        <br>
         <div class="pt-4">
-            <label class="q1-options">YES<input type="radio" name="q9" value="1"> <span class="checkmark"></span>
-            </label> <label class="q1-options">NO <input type="radio" name="q9" value="0"> <span
+            <label class="q1-options">YES<input name="q9" type="radio" value="1"> <span class="checkmark"></span>
+            </label> <label class="q1-options">NO <input name="q9" type="radio" value="0"> <span
                 class="checkmark"></span>
-        </label> <label class="q1-options">Non <input type="radio" name="q9" value="0.5"> <span
+        </label> <label class="q1-options">Not taken <input name="q9" type="radio" value="0.5"> <span
                 class="checkmark"></span>
         </label></div>
-<div class="h5 font-weight-bold"><b><h2> Statistics: </h2></b></div>
-        <div class="h4 font-weight-bold"><b>  1- Introduce descriptive measures, probability, statistical inference,
+        <div align="center" class="h5 font-weight-bold"><b><h2> Statistics: </h2></b></div>
+        <br>
+        <div class="h4 font-weight-bold"><b> 1- Introduce descriptive measures, probability, statistical inference,
             linear regressions, and correlation? </b></div>
+        <br>
         <div class="pt-4">
-            <label class="q1-options">YES<input type="radio" name="q10" value="1"> <span class="checkmark"></span>
-            </label> <label class="q1-options">NO <input type="radio" name="q10" value="0"> <span
+            <label class="q1-options">YES<input name="q10" type="radio" value="1"> <span class="checkmark"></span>
+            </label> <label class="q1-options">NO <input name="q10" type="radio" value="0"> <span
                 class="checkmark"></span>
-        </label> <label class="q1-options">Non <input type="radio" name="q10" value="0.5"> <span
+        </label> <label class="q1-options">Not taken <input name="q10" type="radio" value="0.5"> <span
                 class="checkmark"></span>
         </label></div>
-         <div class="h4 font-weight-bold"><b>  2- develop ideas for helping to make decisions based on understanding of
-                a few deep concepts and interpretation of data and statistical results? </b></div>
+        <div class="h4 font-weight-bold"><b> 2- develop ideas for helping to make decisions based on understanding of
+            a few deep concepts and interpretation of data and statistical results? </b></div>
+        <br>
         <div class="pt-4">
-            <label class="q1-options">YES<input type="radio" name="q11" value="1"> <span class="checkmark"></span>
-            </label> <label class="q1-options">NO <input type="radio" name="q11" value="0"> <span
+            <label class="q1-options">YES<input name="q11" type="radio" value="1"> <span class="checkmark"></span>
+            </label> <label class="q1-options">NO <input name="q11" type="radio" value="0"> <span
                 class="checkmark"></span>
-        </label> <label class="q1-options">Non <input type="radio" name="q11" value="0.5"> <span
+        </label> <label class="q1-options">Not taken <input name="q11" type="radio" value="0.5"> <span
                 class="checkmark"></span>
         </label></div>
-        <div class="h4 font-weight-bold"><b>   3- Emphasize examples and applications from different disciplines in
-                    science by presenting real-life statistical applications ? </b></div>
+        <div class="h4 font-weight-bold"><b> 3- Emphasize examples and applications from different disciplines in
+            science by presenting real-life statistical applications ? </b></div>
+        <br>
         <div class="pt-4">
-            <label class="q1-options">YES<input type="radio" name="q12" value="1"> <span class="checkmark"></span>
-            </label> <label class="q1-options">NO <input type="radio" name="q12" value="0"> <span
+            <label class="q1-options">YES<input name="q12" type="radio" value="1"> <span class="checkmark"></span>
+            </label> <label class="q1-options">NO <input name="q12" type="radio" value="0"> <span
                 class="checkmark"></span>
-        </label> <label class="q1-options">Non <input type="radio" name="q12" value="0.5"> <span
+        </label> <label class="q1-options">Not taken <input name="q12" type="radio" value="0.5"> <span
                 class="checkmark"></span>
         </label></div>
-         <div class="h5 font-weight-bold"><b><h2> Calculus-1 :</h2></b></div>
-        <div class="h4 font-weight-bold"><b>   1- Use functions, limits of functions, and continuity? </b></div>
+        <div align="center" class="h5 font-weight-bold"><b><h2> Calculus-1 :</h2></b></div>
+        <br>
+        <div class="h4 font-weight-bold"><b> 1- Use functions, limits of functions, and continuity? </b></div>
+        <br>
         <div class="pt-4">
-            <label class="q1-options">YES<input type="radio" name="q13" value="1"> <span class="checkmark"></span>
-            </label> <label class="q1-options">NO <input type="radio" name="q13" value="0"> <span
+            <label class="q1-options">YES<input name="q13" type="radio" value="1"> <span class="checkmark"></span>
+            </label> <label class="q1-options">NO <input name="q13" type="radio" value="0"> <span
                 class="checkmark"></span>
-        </label> <label class="q1-options">Non <input type="radio" name="q13" value="0.5"> <span
+        </label> <label class="q1-options">Not taken <input name="q13" type="radio" value="0.5"> <span
                 class="checkmark"></span>
         </label></div>
-        <div class="h4 font-weight-bold"><b>   2- Understand derivation and integration and use them in some
-                applications? </b></div>
+        <div class="h4 font-weight-bold"><b> 2- Understand derivation and integration and use them in some
+            applications? </b></div>
+        <br>
         <div class="pt-4">
-            <label class="q1-options">YES<input type="radio" name="q14" value="1"> <span class="checkmark"></span>
-            </label> <label class="q1-options">NO <input type="radio" name="q14" value="0"> <span
+            <label class="q1-options">YES<input name="q14" type="radio" value="1"> <span class="checkmark"></span>
+            </label> <label class="q1-options">NO <input name="q14" type="radio" value="0"> <span
                 class="checkmark"></span>
-        </label> <label class="q1-options">Non <input type="radio" name="q14" value="0.5"> <span
+        </label> <label class="q1-options">Not taken <input name="q14" type="radio" value="0.5"> <span
                 class="checkmark"></span>
         </label></div>
-        <div class="h5 font-weight-bold"><b><h2> Calculus-2 :</h2></b></div>
-        <div class="h4 font-weight-bold"><b>   1- Use definite integral and some applications on it? </b></div>
+        <div align="center" class="h5 font-weight-bold"><b><h2> Calculus-2 :</h2></b></div>
+        <br>
+        <div class="h4 font-weight-bold"><b> 1- Use definite integral and some applications on it? </b></div>
+        <br>
         <div class="pt-4">
-            <label class="q1-options">YES<input type="radio" name="q15" value="1"> <span class="checkmark"></span>
-            </label> <label class="q1-options">NO <input type="radio" name="q15" value="0"> <span
+            <label class="q1-options">YES<input name="q15" type="radio" value="1"> <span class="checkmark"></span>
+            </label> <label class="q1-options">NO <input name="q15" type="radio" value="0"> <span
                 class="checkmark"></span>
-        </label> <label class="q1-options">Non <input type="radio" name="q15" value="0.5"> <span
+        </label> <label class="q1-options">Not taken <input name="q15" type="radio" value="0.5"> <span
                 class="checkmark"></span>
         </label></div>
-        <div class="h4 font-weight-bold"><b>   2- Use methods of evaluating integrals, infinite series, polar
-                coordinates, and conic sections? </b></div>
+        <div class="h4 font-weight-bold"><b> 2- Use methods of evaluating integrals, infinite series, polar
+            coordinates, and conic sections? </b></div>
+        <br>
         <div class="pt-4">
-            <label class="q1-options">YES<input type="radio" name="q16" value="1"> <span class="checkmark"></span>
-            </label> <label class="q1-options">NO <input type="radio" name="q16" value="0"> <span
+            <label class="q1-options">YES<input name="q16" type="radio" value="1"> <span class="checkmark"></span>
+            </label> <label class="q1-options">NO <input name="q16" type="radio" value="0"> <span
                 class="checkmark"></span>
-        </label> <label class="q1-options">Non <input type="radio" name="q16" value="0.5"> <span
+        </label> <label class="q1-options">Not taken <input name="q16" type="radio" value="0.5"> <span
                 class="checkmark"></span>
         </label></div>
-<div class="h5 font-weight-bold"><b><h2> Physics-1 :</h2></b></div>
-         <div class="h4 font-weight-bold"><b>   1- Distinguish between vectors and scalars and how to deal with vectors
-            correctly?  </b></div>
+        <div align="center" class="h5 font-weight-bold"><b><h2> Physics-1 :</h2></b></div>
+        <br>
+        <div class="h4 font-weight-bold"><b> 1- Distinguish between vectors and scalars and how to deal with vectors
+            correctly? </b></div>
+        <br>
         <div class="pt-4">
-            <label class="q1-options">YES<input type="radio" name="q17" value="1"> <span class="checkmark"></span>
-            </label> <label class="q1-options">NO <input type="radio" name="q17" value="0"> <span
+            <label class="q1-options">YES<input name="q17" type="radio" value="1"> <span class="checkmark"></span>
+            </label> <label class="q1-options">NO <input name="q17" type="radio" value="0"> <span
                 class="checkmark"></span>
-        </label> <label class="q1-options">Non <input type="radio" name="q17" value="0.5"> <span
+        </label> <label class="q1-options">Not taken <input name="q17" type="radio" value="0.5"> <span
                 class="checkmark"></span>
         </label></div>
-           <div class="h4 font-weight-bold"><b>   2- Apply Newton’s laws for systems in rectilinear motion, circular
-                motion and rotational motion?  </b></div>
+        <div class="h4 font-weight-bold"><b> 2- Apply Newton’s laws for systems in rectilinear motion, circular
+            motion and rotational motion? </b></div>
+        <br>
         <div class="pt-4">
-            <label class="q1-options">YES<input type="radio" name="q18" value="1"> <span class="checkmark"></span>
-            </label> <label class="q1-options">NO <input type="radio" name="q18" value="0"> <span
+            <label class="q1-options">YES<input name="q18" type="radio" value="1"> <span class="checkmark"></span>
+            </label> <label class="q1-options">NO <input name="q18" type="radio" value="0"> <span
                 class="checkmark"></span>
-        </label> <label class="q1-options">Non <input type="radio" name="q18" value="0.5"> <span
+        </label> <label class="q1-options">Not taken <input name="q18" type="radio" value="0.5"> <span
                 class="checkmark"></span>
         </label></div>
-        <div class="h4 font-weight-bold"><b>   3- Be aware of the conservation theorems and their importance in
-                    solving physical problems? </b></div>
+        <div class="h4 font-weight-bold"><b> 3- Be aware of the conservation theorems and their importance in
+            solving physical problems? </b></div>
+        <br>
         <div class="pt-4">
-            <label class="q1-options">YES<input type="radio" name="q19" value="1"> <span class="checkmark"></span>
-            </label> <label class="q1-options">NO <input type="radio" name="q19" value="0"> <span
+            <label class="q1-options">YES<input name="q19" type="radio" value="1"> <span class="checkmark"></span>
+            </label> <label class="q1-options">NO <input name="q19" type="radio" value="0"> <span
                 class="checkmark"></span>
-        </label> <label class="q1-options">Non <input type="radio" name="q19" value="0.5"> <span
+        </label> <label class="q1-options">Not taken <input name="q19" type="radio" value="0.5"> <span
                 class="checkmark"></span>
         </label></div>
-<div class="Submit">
-   <center><button class="glow-button" type="submit">Submit</button></center>
- </div>
+        <center>
+            <div class="Submit">
+                <button class="glow-button" type="submit">Submit</button>
+                <button class="glow-button" type="reset">Clear</button>
+            </div>
+        </center>
 
     </div>
 
-<!--    before this div-->
+    <!--    before this div-->
     </div>
 
 </form>
