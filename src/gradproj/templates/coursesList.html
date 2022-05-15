@@ -2,9 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    {% load static %}
     <meta charset="UTF-8" />
     <title>Navigation bar</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="{% static 'gradproj/style.css' %}"  />
   </head>
 
   <body>
@@ -25,16 +26,19 @@
       </header>
       <div class="banner-area">
         <center>
-  <h1> logic design</h1>
-  <table>
-    <tr>
-      <td width="40%" border="1"> <p>A logic gate is an idealized model of computation or a physical electronic device implementing a Boolean function, a logical operation performed on one or more binary inputs that produces a single binary output. </p></td>
-     <td>
-       <h1> videos</h1><iframe id="ytplayer" type="text/html" width="100%" height="405"
-src="https://www.youtube.com/embed/?listType=playlist&list=PLAwv14VhKVabiV420DERMddTzzFiivcTb"
-frameborder="0" allowfullscreen></iframe></td>
-    </tr>
-  </table>
+
+
+
+
+ <h1> {{course_name}}</h1>
+           <h1> {{course_name}}</h1>
+       <h1> videos</h1>
+
+          <iframe id="ytplayer" type="text/html" width=720" height="480"
+src={{link}}
+frameborder="0" allowfullscreen></iframe>
+     <p>{{description}} </p>
+
 </center>
       </div>
       <div class="content-area">

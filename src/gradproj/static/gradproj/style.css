@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-align: center;
+}
+
+.wrapper {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.wrapper p{
+  font-size: 20px;
+  font-family: 'Source Sans Pro', sans-serif; 
+}
+
+header {
+  height: 60px;
+  background: #A94DB8;
+  width: 100%;
+  z-index: 12;
+  position: fixed;
+}
+/* The Study Source logo design */
+.logo {
+  width: 30%;
+  float: left;
+  line-height: 60px;
+}
+
+.logo a {
+  text-decoration: none;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font: bold;
+  color: black;
+  letter-spacing: 5px;
+}
+
+.logo a:hover {
+  color: rgb(255, 255, 255);
+  line-height: 70px;
+}
+/* ------------------- */
+/* The navigation bar desing */
+nav {
+  float: right;
+  line-height: 60px;
+}
+
+nav a {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 3px;
+  font-size: 17px;
+  margin: 0 15px;
+  color: rgb(0, 0, 0);
+  padding: 4px 0;
+  
+  transition: 0.3s;
+  
+}
+
+nav a:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  top: 100%;
+  left: 0;
+  background: rgb(0, 0, 0);
+  transition: transform 1s;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+nav a:hover::after {
+  transition: transform 1s;
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+nav a:hover {
+  color: rgb(255, 255, 255);
+}
+/* -------------- */
+/* The picture in the middle and the words on it design */
+.banner-area {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 20px;
+  background-image: url(images/back.jpg);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+}
+
+.banner-area h2 {
+  padding: 275px 100px 250px 250px;
+  font-size: 50px;
+  font-family: bidnoodletitling;
+  text-transform: capitalize;
+  color: rgb(115, 28, 116);
+  text-align: center;
+}
+/* ----------------- */
+.content-area {
+  width: 100%;
+  position: relative;
+  top: 725px;
+  background: #A94DB8;
+  height: 600px;
+}
+
+.wish{
+  background-color: #A94DB8;
+}
+
+.content-area h2 {
+  font-family: bignoodletitling;
+  letter-spacing: 4px;
+  padding-top: 30px;
+  font-size: 40px;
+  margin: 0;
+}
+
+.content-area p {
+  padding: 10px 0;
+  font-family: merienda;
+}
+
+.content-area a {
+  padding: 2% 0;
+  text-transform: capitalize;
+  font-family: Arial;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-size: 20px;
+  margin: 0 10px;
+  color: rgb(13, 26, 216);
+}
+
+.bb1{
+ color:white
+}

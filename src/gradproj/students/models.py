@@ -6,3 +6,5 @@ class user(models.Model):
     userFirstName=models.TextField(max_length=10)
     userLastName=models.TextField(max_length=10)
     userResult=models.TextField(default="Not Taken The Test Yet")
+    usersecresult=models.TextField(default="sec result")
+    userthirdresult = models.TextField(default="third result")

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <title>Navigation bar</title>
+    <link rel="stylesheet" href="{% static 'gradproj/tree.css' %}">
+    <style >
+      .space{
+      margin-top:4px;
+      }
+    </style>
+  </head>
+  <body>
+   <div class="box-area">
+      <header>
+        <div class="wrapper">
+          <div class="logo">
+            <a href="http://127.0.0.1:8000/">Study Source</a>
+          </div>
+          <nav>
+            <a href="http://127.0.0.1:8000/questions/">Questionnaire</a>
+            <a href="#">About us</a>
+            <a href="http://127.0.0.1:8000/tree/">Tree</a>
+            <a href="http://127.0.0.1:8000/sign-in/">Sign In</a>
+            <a href="http://127.0.0.1:8000/sign-up/">Sign Up</a>
+          </nav>
+        </div>
+      </header> 
+
+     <div class="t">
+      <div class="tree">
+        <ul >
+          <li >
+            <a href=" " style="background-color:{{Programming}};">مقدمة في البرمجة</a>
+            <ul>
+              <li>
+                <ul>
+                  <li><a href="#"style="background-color:{{Programming}};"> برمجة كينونية 1</a>
+                    <ul>
+                      <li><a href="#"style="background-color:{{Programming}};">برمجة مرئية</a></li>
+                      <li> <a href="" style="background-color:{{Theory}};"> تراكيب البيانات</a>
+                      <ul>
+                        <li><a href="" style="background-color:{{Theory}};">ذكاء الصطناعي</a></li>
+                        <li><a href="" style="background-color:{{Theory}};">خوارزميات</a>
+                        <ul>
+                          <li><a href="" style="background-color:{{Theory}};">التنقيب عن البيانات </a></li>
+                        </ul>
+                        </li>
+                        <li><a href=""style="background-color:{{Theory}};"> برمجة الوسائط المتعددة</a></li>
+                        <li><a href="" style="background-color:{{Programming}};">الرسم بالحاسوب </a></li>
+                        <li><a href="" style="background-color:{{Programming}};">أساليب المحاكاه</a></li>
+                        <li><a href="" style="background-color:{{Programming}};"> مقدمة في نظم قواعد البيانات</a>
+                        <ul>
+                          <li><a href="" style="background-color:{{Programming}};">امن نظم المعلومات</a></li>
+                          <li><a href="" style="background-color:{{Theory}};">تحليل و تصميم النظم</a></li>
+                        </ul>
+                        </li>
+                      </ul>
+                      </li>
+                      <li><a href="#" style="background-color:{{Theory}};">اساسيات هندسة البرمجيات</a></li>
+                      <li> <a href="" style="background-color:{{Programming}};"> برمجة كينونية 2</a>
+                      <ul>
+                        <li><a href="" style="background-color:{{Programming}};"> تطوير تطبيقات الأجهزة المحمولة </a></li>
+                        <li><a href="" style="background-color:{{Theory}};"> تصميم و تنفيذ واجهة المستخدم </a></li>
+                      </ul>
+                      </li>
+                      <li><a href="#" style="background-color:{{Programming}};"> برمجة تطبيقات الانترنت</a>
+                      <ul>
+                          <li><a href="" style="background-color:{{Programming}};">تصميم لغات برمجة</a></li>
+                      </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+      </div>
+    </div>
+    
+<br><br><br>
+      <div class="tree">
+        <ul>
+          <li><a href="" style="background-color:{{Mathematical}};">رياضيات متقطعة</a>
+          <ul>
+            <li><a href="" style="background-color:{{Theory}};">نظريات الحسابات</a></li>
+            <li><a href="" style="background-color:{{Theory}};">التصميم المنطقي الرقمي </a>
+            <ul>
+              <li><a href="" style="background-color:{{Theory}};">تصميم و تنظيم الحاسوب </a>
+              <ul>
+              <li><a href="" style="background-color:{{Theory}};">أساسيات معمارية الحاسوب </a></li>
+              </ul>
+              </li>
+              <li><a href="" style="background-color:{{Programming}};"> نظم التشغيل</a></li>
+              <li><a href="" style="background-color:{{Programming}};">شبكات الحاسوب</a>
+              <ul>
+                <li><a href="" style="background-color:{{Programming}};">الحوسبة المتوازية</a></li>
+              <li><a href="" style="background-color:{{Theory}};">الشبكات اللاسلكية</a></li>
+              <li><a href="" style="background-color:{{Theory}};">أمن الشبكات </a></li>
+              <li><a href="" style="background-color:{{Theory}};">بروتوكولات الانترنت </a></li>
+              </ul>
+              </li>
+            </ul>
+            </li>
+          </ul>
+          </li>
+        </ul>
+      </div>
+     <div style=" padding:100px;"></div>
+
+<div class="tree">
+
+<ul>
+  <li><a href="#" style="background-color:{{Mathematical}};" >تفاضل و تكامل 1</a>
+  <ul><li><a href="" style="background-color:{{Mathematical}};">تفاضل و تكامل 2</a></li></ul></li>
+</ul>
+</div>
+
+<div class="tree" >
+<ul>
+  <li><a href="" style="background-color:{{Mathematical}};">فيزياء عامة 1</a><ul>
+    <li><a href="" style="background-color:{{Mathematical}};">فيزياء عامة 2</a>
+    </li>
+  </ul>
+</li>
+</ul>
+</div>
+<br>
+ <div class="tree">
+   <ul><li><a href="" style="background-color:{{Mathematical}};">جبر خطي </a>
+  <ul><li><a href="" style="background-color:{{Mathematical}};">طرق عددية</a>
+  <ul><li><a href=""style="background-color:{{Mathematical}};">بحوث عمليات</a></li></ul></li></ul></li></ul>
+ </div>
+
+ <div class="tree"><ul><li><a href="" style="background-color:{{Mathematical}};">مبادئ احصاء</a></li></ul></div>
+
+
+   </div>
+      </div>
+
+    <div class="footer">
+      </div>
+    </div>
+
+  </body>
+</html>

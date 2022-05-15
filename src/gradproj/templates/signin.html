@@ -11,15 +11,28 @@
   <body>
     <div class="all">
       <div class="sign_up_form">
+            <div style="margin-right:20px;">
+          <a href="http://127.0.0.1:8000/"><img src="{% static 'gradproj/images/homelogo.png' %}" width="50px" height="32px" alt ="Home page" style="position: relative; top:9px; left:10px"></a>
+        </div>
         <!-- <img src="usericon.png.jpeg" alt="User Icon" /> -->
         <h1>Sign In</h1>
 
         <form method="POST">
     {% csrf_token %}
-    {{ login_form }}
+          {% for field in login_form %}
+          {{field.label}}
+          {{field}}
+          {% endfor %}
+<!--    {{ login_form }}-->
     <button class="signup_button" type="submit">Sign in</button>
   </form>
+<form>
+     <hr />
+          <p class="or">OR</p>
+          <button type="button" class="gmailbutton">Sign in with GMAIL</button>
+          <p>Didn't has an account? <a href="http://127.0.0.1:8000/sign-up/">Sign up</a></p>
 
+</form>
 
 
       </div>
