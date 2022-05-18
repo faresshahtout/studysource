@@ -4,8 +4,10 @@
     {% load static %}
     <meta charset="UTF-8" />
     <title>FAQ</title>
-    <link rel="stylesheet" href="{% static 'gradproj/about-main.css' %}"  />
-    <link rel="stylesheet" href="{% static 'gradproj/about-nav.css' %}" >
+<!--  <link rel="stylesheet" href="{% static 'gradproj/about-main.css' %}"  >-->
+        <link rel="stylesheet" href="{% static 'gradproj/about-nav2.css' %}"  >
+
+<!--    <link rel="stylesheet" href="{% static 'gradproj/about-us-css.css' %}" >-->
   </head>
   <body>
  <div class="box-area">
@@ -15,13 +17,15 @@
                 <a href="http://127.0.0.1:8000/">Study Source</a>
             </div>
             <nav>
+                {% if user.is_authenticated %}
                 <a href="/questions/">Questionnaire</a>
+                {% endif %}
 
                 <a href="/tree/">Tree</a>
                 <a href="/faq/">FAQ</a>
                 {% if user.is_authenticated %}
 
-                <a> welcome {{ request.user }}</a>
+                <a> welcome </a>
                 <a class="nav-link" href="/logout">Logout</a>
 
 
@@ -29,7 +33,7 @@
 
 
                 <a href="/sign-in/">Sign In</a>
-                <a href="sign-up/">Sign Up</a>
+                <a href="/sign-up/">Sign Up</a>
 
                 {% endif %}
 
@@ -38,12 +42,12 @@
         </div>
     </header>
 
-    <div class="banner-area">
+
       
    
 
 
-          <img src="{% static 'gradproj/images/aboutus.png' %}"alt="Paris" class="center">
+          <img src="{% static 'gradproj/images/aboutus2.png' %}"alt="Paris" class="center">
 
 
             <div class="about-section">
@@ -143,6 +147,27 @@
     
               </div>
        </div>
- </div>
+
+   <div class="container-">
+  <form method="post">
+      {% csrf_token %}
+
+    <label for="fname">NAME  </label>
+     {% if user.is_authenticated %}
+    <input type="text" id="fname" name="firstname" placeholder="Your name.." value="{{request.user}}">
+      {% else %}
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      {% endif %}
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+
+  </form>
+</div>
+
+
   </body>
 </html>

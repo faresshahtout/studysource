@@ -23,6 +23,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from gradproj.views import faq_view
 from courses import views as cview
+from rating import views as rview
 
 
 
@@ -34,7 +35,7 @@ urlpatterns = [
     path('sign-up/', views.register_request, name=''),
     path('sign-in/', views.login_request, name='',),
     path('tree/', sview.tree_view, name=''),
-    path('faq/', faq_view, name=''),
+    path('faq/', rview.faq_view, name=''),
     path('questions/', sview.questions_view, name=''),
     path("logout", views.logout_request, name= "logout"),
     path('c++/', cview.c_view, name=''),

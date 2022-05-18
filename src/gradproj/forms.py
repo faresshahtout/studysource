@@ -12,7 +12,7 @@ from django.forms.widgets import PasswordInput, TextInput
 
 class NewUserForm(UserCreationForm):
 	email = forms.EmailField(required=True,widget=forms.TextInput(attrs={'placeholder': 'E-mail','class':'input_box'}))
-	username=forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Username','class':'input_box'}))
+	username=forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'College ID','class':'input_box'}))
 	password1 =forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Password','class':'input_box','type':'password'}))
 	password2 = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Confirm Your Password','class':'input_box','type':'password'}))
 	class Meta:

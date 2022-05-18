@@ -4,12 +4,44 @@
 <head>
     {% load static %}
     <title>Question</title>
-    <link href="{% static 'gradproj/questions2.css' %}" rel="stylesheet">
+    <link href="{% static 'gradproj/questions.css' %}" rel="stylesheet">
 </head>
+<body>
+<header>
+<div class="hh">
+    <div class="ll">
+        <a href="http://127.0.0.1:8000/">Study Source</a>
+    </div>
+    <nav>
 
-<!--Programming-->
+        <a href="/questions/">Questionnaire</a>
+
+        <a href="/tree/">Tree</a>
+        <a href="/faq/">FAQ</a>
+        {% if user.is_authenticated %}
+
+        <a> welcome </a>
+        <a class="nav-link" href="/logout">Logout</a>
+
+
+        {% else %}
+
+
+        <a href="/sign-in/">Sign In</a>
+        <a href="sign-up/">Sign Up</a>
+
+        {% endif %}
+
+
+    </nav>
+</div>
+</header>
+
+    <!--Programming-->
+<div class="amer-top">
 <form action="/questions/" method="post">
     {% csrf_token %}
+
     <div class="wrapper">
         <div class="wrap" id="q1">
             <h2> Please fill in this questionnaire to be directed to your recommended curriculum tree according to your
@@ -241,5 +273,7 @@
     </div>
 
 </form>
+</div>
 </div></div>
+</body>
 </html>

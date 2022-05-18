@@ -6,8 +6,13 @@
 	padding: 0;
   }
   
-  body {
+.pic{
 	text-align: center;
+		background-repeat: no-repeat;
+		background-position:bottom right;
+		background-attachment: fixed;
+	   /* background-size: cover;*/
+	
   }
   
   .wrapper {
