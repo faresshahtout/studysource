@@ -100,7 +100,7 @@ nav a:hover {
 }
 
 .banner-area h2 {
-  padding: 275px 100px 250px 250px;
+  padding: 290px 10px 250px 285px;
   font-size: 50px;
   font-family: bidnoodletitling;
   text-transform: capitalize;
@@ -135,7 +135,7 @@ nav a:hover {
 
 .content-area a {
   padding: 2% 0;
-  text-transform: capitalize;
+  text-transform: ;
   font-family: Arial;
   text-decoration: none;
   letter-spacing: 3px;

@@ -1,58 +1,59 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    {% load static %}
-    <meta charset="UTF-8" />
-    <title>Navigation bar</title>
-    <link rel="stylesheet" href="{% static 'gradproj/style.css' %}"  />
-  </head>
 
-  <body>
-    <div class="box-area">
-      <header>
+<head>
+  {% load static %}
+  <meta charset="UTF-8" />
+  <title>Navigation bar</title>
+  <link rel="stylesheet" href="{% static 'gradproj/stylecourse.css' %}"/>
+
+</head>
+
+<body>
+  <div class="box-area">
+     <header>
         <div class="wrapper">
-          <div class="logo">
-            <a href="#">Study Source</a>
-          </div>
-          <nav>
-            <a href="#">Roadmap</a>
-            <a href="#">About us</a>
-            <a href="#">Tree</a>
-            <a href="#">Sign In</a>
-            <a href="#">Sign Up</a>
-          </nav>
+            <div class="logo">
+                <a href="http://127.0.0.1:8000/">Study Source</a>
+            </div>
+            <nav>
+{% if user.is_authenticated %}
+                <a href="/questions/">Questionnaire</a>
+                {% endif %}
+
+                <a href="/tree/">Tree</a>
+                <a href="/faq/">FAQ</a>
+                {% if user.is_authenticated %}
+
+                <a> welcome </a>
+                <a class="nav-link" href="/logout">Logout</a>
+
+
+                {% else %}
+
+
+                <a href="/sign-in/">Sign In</a>
+                <a href="sign-up/">Sign Up</a>
+
+                {% endif %}
+
+
+            </nav>
         </div>
-      </header>
-      <div class="banner-area">
-        <center>
+    </header>
+    <div class="banner-area">
 
-
-
-
- <h1> {{course_name}}</h1>
-           <h1> {{course_name}}</h1>
-       <h1> videos</h1>
-
-          <iframe id="ytplayer" type="text/html" width=720" height="480"
-src={{link}}
-frameborder="0" allowfullscreen></iframe>
-     <p>{{description}} </p>
-
-</center>
-      </div>
-      <div class="content-area">
-        <div class="wrapper">
-          <h2>About Study Source</h2>
-          <p>
-            This is project is used to help the students who were affected by
-            the COVID situation and who are getting affected everyday by not
-            studying
-          </p>
-          <a href="#">GMAIL</a>
-          <a href="#">LINKEDIN</a>
-          <a href="#">MOBILE</a>
-        </div>
+      <iframe id="ytplayer" type="text/html" width="50%" height="405" style="border-radius: 15px; margin-right: 25px;" align="right" 
+      src="{{link}}"
+      frameborder="0" allowfullscreen></iframe>
+      <div class="description">
+      <p><h2> {{course_name}}</h2>
+       {{description}}
+      </p>
+    </div>
+    </div>
+    <div class="content-area">
       </div>
     </div>
-  </body>
+  </div>
+</body>
