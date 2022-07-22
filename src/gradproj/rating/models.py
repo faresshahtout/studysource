@@ -1,7 +1,8 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 class rating(models.Model):
-    user=models.CharField(max_length=100)
+    feedbackid=models.IntegerField(default="000",primary_key=True)
+    user=models.ForeignKey(User,on_delete=models.CASCADE,max_length=100,)
     star_rating = models.IntegerField(max_length=5,default=5)
-    submission= models.CharField(max_length=500)
+    feedback= models.CharField(max_length=500,default="good")

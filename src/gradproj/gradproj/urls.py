@@ -24,6 +24,9 @@ from django.conf.urls.static import static
 from gradproj.views import faq_view
 from courses import views as cview
 from rating import views as rview
+from gradproj.views import handler as hview
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 
@@ -69,3 +72,4 @@ urlpatterns = [
     path('statistics/', cview.statistics_view, name=''),
 
     ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+handler404="gradproj.views.handler"
